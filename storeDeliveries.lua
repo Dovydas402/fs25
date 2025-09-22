@@ -211,7 +211,7 @@ function StoreDeliveries:updater()
 			setWorldTranslation(sRing, x,y+0.15,z);
 			StoreDeliveries:alignMarkerToGround(sRing);
 			if not getVisibility(sRing) then setVisibility(sRing, true); end;
-			if Input.isKeyPressed(Input.KEY_s) and not StoreDeliveries.btnDown then
+			if Input.isKeyPressed(Input.KEY_q) and not StoreDeliveries.btnDown then
 				local storePlace = g_currentMission.storeSpawnPlaces[1];
 				local dx,_,dz = localDirectionToWorld(cam,0,0,1);
 				local rx,ry,rz = getWorldRotation(cam);
@@ -558,4 +558,5 @@ end;
 
 FSBaseMission.onConnectionWriteUpdateStream = Utils.appendedFunction(FSBaseMission.onConnectionWriteUpdateStream, StoreDeliveries.onConnectionWriteUpdateStream);
 FSBaseMission.onConnectionReadUpdateStream = Utils.appendedFunction(FSBaseMission.onConnectionReadUpdateStream, StoreDeliveries.onConnectionReadUpdateStream);
+
 ]]
